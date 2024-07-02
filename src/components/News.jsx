@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 export default function News() {
-  const [news, setNews] = useState([]);  // piece of state for news
+  const [news, setNews] = useState([]);
   const [articleNum, setArticleNum] = useState(3);
   useEffect(() => {
     fetch('https://saurav.tech/NewsAPI/top-headlines/category/business/us.json')
@@ -14,7 +14,7 @@ export default function News() {
   }, []);
   return (
     <div className='text-gray-700 space-y-3 bg-gray-100 rounded-xl pt-2'>
-      <h4 className='font-bold text-xl px-4'>Whats happening new ...</h4>
+      <h4 className='font-bold text-xl px-4'>Whats happening</h4>
       {news.slice(0, articleNum).map((article) => (
         <div key={article.url}>
           <a href={article.url} target='_blank'>
